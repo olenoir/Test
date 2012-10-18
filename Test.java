@@ -13,8 +13,8 @@ public class Test {
 		    		   							"olenoir","olenoir"); 
 		       Statement st = c.createStatement ();
 		       ResultSet  rs = st.executeQuery ("SELECT * FROM Pilotes");
-		       int taille = rs.getFetchSize();
-		       Afficher a = new Afficher(taille, rs);
+		       int t = rs.getFetchSize();
+		       Afficher a = new Afficher(t, rs);
 		       rs.close() ;
 		       c.close ();
 		} 
