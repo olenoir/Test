@@ -12,10 +12,14 @@ public class Test {
 		       c = DriverManager.getConnection ("jdbc:postgresql:bdolenoir",
 		    		   							"olenoir","olenoir"); 
 		       Statement st = c.createStatement ();
-		       ResultSet  rs = st.executeQuery ("SELECT * FROM Pilotes");
-		       int t = rs.getFetchSize();
+		       
+		       ResultSet rs2 = st.executeQuery("SELECT count(numPilote) FROM Pilotes");
+		       rs2.next();
+		       int t = rs2.getInt(1);
+		       rs2.close();
+		       ResultSet rs = st.executeQuery ("SELECT * FROM Pilotes");
 		       Afficher a = new Afficher(t, rs);
-		       rs.close() ;
+		       rs.close();
 		       c.close ();
 		} 
 		catch (ClassNotFoundException erreur) {
