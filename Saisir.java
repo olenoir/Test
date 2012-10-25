@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.sql.*;
 
 import javax.swing.*;
-
+//Ceci n'est pas une classe.
 public class Saisir extends JFrame implements ActionListener{
 	private JPanel p = new JPanel();
 	private JLabel l1 = new JLabel("NumPilote");
